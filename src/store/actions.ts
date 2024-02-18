@@ -14,12 +14,14 @@ export const decrement = () => ({
 })
 
 
-export const fetchData = () => ({
-    type: FETCH_DATA
+export const fetchData = (loginName?: string) => ({
+    type: FETCH_DATA,
+    payload: loginName
 })
 
 export const fetchDataSuccess = (data: any) => ({
     type: FETCH_DATA_SUCCESS,
     payload: data, 
+    //loginName: data.login
 })
 
