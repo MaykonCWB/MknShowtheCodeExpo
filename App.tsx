@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './src/store/reducers';
 import rootSaga from './src/store/saga';
 import Counter from './src/components/Counter';
+import { StatusBar } from 'react-native';
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -26,6 +27,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
+      <StatusBar barStyle="dark-content" translucent />
       <Counter />
     </Provider>
   )
