@@ -2,7 +2,9 @@ if (__DEV__) {
   import("./ReactotronConfig").then(() => console.log("Reactotron Configured"));
 }
 import React from 'react';
+import { ThemeProvider } from '@shopify/restyle';
 import { Provider } from 'react-redux';
+
 //import {  applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
@@ -11,7 +13,7 @@ import rootSaga from './src/store/saga';
 import Counter from './src/components/Counter';
 //import { StatusBar } from 'react-native';
 import {theme} from './src/theme/theme';
-import { ThemeProvider } from '@shopify/restyle';
+
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -28,11 +30,14 @@ sagaMiddleware.run(rootSaga);
 const App: React.FC = () => {
 
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-      <Counter />
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={theme}>
+
+      <Provider store={store}>
+        <Counter />
+      </Provider>
+
+        </ThemeProvider>
+
   )
 }
 
