@@ -3,13 +3,15 @@ if (__DEV__) {
 }
 import React from 'react';
 import { Provider } from 'react-redux';
-import {  applyMiddleware } from 'redux';
+//import {  applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './src/store/reducers';
 import rootSaga from './src/store/saga';
 import Counter from './src/components/Counter';
-import { StatusBar } from 'react-native';
+//import { StatusBar } from 'react-native';
+import {theme} from './src/theme/theme';
+import { ThemeProvider } from '@shopify/restyle';
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -27,8 +29,9 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar barStyle="dark-content" translucent />
+      <ThemeProvider theme={theme}>
       <Counter />
+      </ThemeProvider>
     </Provider>
   )
 }
