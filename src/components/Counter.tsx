@@ -1,63 +1,63 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import {  Text, ScrollView, SafeAreaView, } from 'react-native';
-import { useDispatch,useSelector } from 'react-redux';
-import { increment, decrement,fetchData } from '../store/actions';
-import { Button } from './Button/Button';
-import * as S from './styles';
+import { Screen } from './Screen/Screen';
+import {Text} from 'react-native';
+import {PasswordInput} from '../components/PasswordInput/PasswordInput';
+import {Button} from '../components/Button/Button';
 import { TextInput } from './TextInput/TextInput';
 
 
-  interface State {
-    count: number;
-    blogUrl: string;
-
-  }
-
 const Counter: React.FC = () => {
-    const dispatch = useDispatch();
-    const count = useSelector((state: State) => state.count);
-    const blogUrl = useSelector((state: State) => state.blogUrl);
-    const [loginName, setLoginName] = useState('');
+
 
 
     return (
-        <SafeAreaView>
-            <ScrollView>
-                <S.View>
-                    <Button title="+" onPress={() => dispatch(increment())}/>
-                    <S.CounterView>
-                        <S.CounterText>{count}</S.CounterText>
-                    </S.CounterView>
-                    <Button title="-" onPress={() => dispatch(decrement())}/>
-                
+        <Screen scrollable>
 
-                    <TextInput  
-                        label="Nome de usuario no Github" 
-                        value={loginName} errorMessage="Digite um nome de usuario" 
-                        onChangeText={(text: string) => setLoginName(text)} />
+<Text >
+        Olá
+      </Text>
+      <Text >
+        Digite seu e-mail e senha para entrar
+      </Text>
+      <TextInput
+        errorMessage="mensagem de error"
+        label="E-mail"
+        placeholder="Digite seu e-mail"
+        boxProps={{mb: 's20'}}
+      />
+      
 
-                    <Button title="Chama API do GitHub" onPress={() => dispatch(fetchData(loginName))}/>
-                    <Text style={{color: 'red', fontSize: 50, fontFamily: 'Satoshi-Light'}}>
-                        jaiabsanjsanksa
-                    </Text>
+      <Button marginTop="s48" title="Entrar" />
+      <Button preset="outline" marginTop="s12" title="Criar uma conta" />
+      
+      {/* <Text marginBottom="s8" preset="headingLarge">
+        Olá
+      </Text>
+      <Text preset="paragraphLarge" mb="s40">
+        Digite seu e-mail e senha para entrar
+      </Text>
 
-                        <Text>{blogUrl}</Text>
+      <TextInput
+        errorMessage="mensagem de error"
+        label="E-mail"
+        placeholder="Digite seu e-mail"
+        boxProps={{mb: 's20'}}
+      />
 
+      <PasswordInput
+        label="Senha"
+        placeholder="Digite sua senha"
+        boxProps={{mb: 's10'}}
+      />
 
+      <Text color="primary" preset="paragraphSmall" bold>
+        Esqueci minha senha
+      </Text>
 
-                    <S.View>
-                        <S.TextContainer>
-                            <Text>
-                                
-                            </Text>
-                        </S.TextContainer>
-                    </S.View>
-
-                </S.View>
-
-            </ScrollView>
-        </SafeAreaView>
+      <Button marginTop="s48" title="Entrar" />
+      <Button preset="outline" marginTop="s12" title="Criar uma conta" /> */}
+    </Screen>
 
     )
 

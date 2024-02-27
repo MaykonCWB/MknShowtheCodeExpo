@@ -98,3 +98,5 @@ export const $fontFamily = {
   mediumItalic: 'Satoshi-MediumItalic',
   regular: 'Satoshi-Regular',
 };
+
+export default Text;

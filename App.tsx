@@ -9,37 +9,44 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './src/store/reducers';
-import rootSaga from './src/store/saga';
 import Counter from './src/components/Counter';
-//import { StatusBar } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 import {theme} from './src/theme/theme';
 
+import {SignUpScreen} from './src/screens/auth/SignUpScreen/SignUpScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { LoginScreen } from './src/screens/auth/LoginScreen/LoginScreen';
 
-
-const sagaMiddleware = createSagaMiddleware();
-
-// configureStore({reducer: rootReducer, applyMiddleware(sagaMiddleware)});
-
-const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
-  devTools: true
-})
-sagaMiddleware.run(rootSaga);
-
-const App: React.FC = () => {
-
+function App(): JSX.Element {
   return (
-    <ThemeProvider theme={theme}>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
 
-      <Provider store={store}>
-        <Counter />
-      </Provider>
+        {/* <LoginScreen /> */}
+        <LoginScreen />
 
-        </ThemeProvider>
-
-  )
+      </ThemeProvider>
+    </SafeAreaProvider>
+  );
 }
+
+// const App: React.FC = () => {
+
+//   return (
+//     <SafeAreaProvider>
+//     <ThemeProvider theme={theme}>
+
+//       <Provider store={store}>
+//         {/* <SignUpScreen/> */}
+//         <LoginScreen />
+//         {/* <Counter/> */}
+//       </Provider>
+
+//         </ThemeProvider>
+//         </SafeAreaProvider>
+
+//   )
+// }
 
 export default App;
 
