@@ -14,3 +14,5 @@ export function EyeOnIcon({size = 20, color = 'black'}: IconBase) {
     </Svg>
   );
 }
+
+export default EyeOnIcon;
