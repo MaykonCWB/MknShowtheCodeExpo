@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
 import {  Text, ScrollView, SafeAreaView, } from 'react-native';
 import { useDispatch,useSelector } from 'react-redux';
@@ -37,6 +38,9 @@ const Counter: React.FC = () => {
                         onChangeText={(text: string) => setLoginName(text)} />
 
                     <Button title="Chama API do GitHub" onPress={() => dispatch(fetchData(loginName))}/>
+                    <Text style={{color: 'red', fontSize: 50, fontFamily: 'Satoshi-Light'}}>
+                        jaiabsanjsanksa
+                    </Text>
 
                         <Text>{blogUrl}</Text>
 
