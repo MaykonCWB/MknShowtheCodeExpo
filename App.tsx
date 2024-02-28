@@ -9,12 +9,13 @@ import {SignUpScreen} from './src/screens/auth/SignUpScreen/SignUpScreen';
 import { LoginScreen } from './src/screens/auth/LoginScreen/LoginScreen';
 import {theme} from './src/theme/theme';
 
+
 function App(): JSX.Element {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-
         <SignUpScreen />
+        {/* <LoginScreen /> */}
       </ThemeProvider>
     </SafeAreaProvider>
   );

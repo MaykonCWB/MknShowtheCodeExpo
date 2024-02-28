@@ -14,13 +14,13 @@ export function PasswordInput(props: PasswordInputProps) {
     <TextInput
       secureTextEntry={isSecureTextEntry}
       {...props}
-      // RightComponent={
-      //   <Icon
-      //     onPress={toggleSecureTextEntry}
-      //     color="gray2"
-      //     name={isSecureTextEntry ? 'eyeOn' : 'eyeOff'}
-      //   />
-      // }
+      RightComponent={
+        <Icon
+          onPress={toggleSecureTextEntry}
+          color="gray2"
+          name={isSecureTextEntry ? 'eyeOn' : 'eyeOff'}
+        />
+      }
     />
   );
 }

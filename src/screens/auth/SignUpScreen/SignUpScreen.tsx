@@ -5,14 +5,7 @@ import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
-import {ProfileIcon} from '../../../../src/assets/icons/ProfileIcon';
-
-import {ArrowLeftIcon} from '../../../assets/icons/ArrowLeftIcon'
-import { View } from 'react-native';
-
-import Svg from 'react-native-svg';
-
-
+import ArrowLeftIcon from '../../../../src/assets/icons/ArrowLeftIcon';
 
 
 export function SignUpScreen() {
@@ -21,12 +14,7 @@ export function SignUpScreen() {
   }
 
   return (
-    <Screen  scrollable>
-      <View style={{alignItems: 'center'}}>
-
-      {/* <ArrowLeftIcon  color="primary" size={24} /> */}
-    </View>
-
+    <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32">
         Criar uma conta
       </Text>
