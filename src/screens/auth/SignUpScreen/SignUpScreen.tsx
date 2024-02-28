@@ -5,11 +5,14 @@ import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
+import ArrowLeftIcon from '../../../../src/assets/icons/ArrowLeftIcon';
+
 
 export function SignUpScreen() {
   function submitForm() {
-    // TODO: implementar
+    console.log('submitForm');
   }
+
   return (
     <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32">
@@ -39,3 +42,5 @@ export function SignUpScreen() {
     </Screen>
   );
 }
+
+export default SignUpScreen;

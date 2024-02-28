@@ -24,3 +24,5 @@ export function PasswordInput(props: PasswordInputProps) {
     />
   );
 }
+
+export default PasswordInput;

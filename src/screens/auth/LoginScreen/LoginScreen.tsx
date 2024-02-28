@@ -24,13 +24,13 @@ export function LoginScreen() {
         placeholder="Digite seu e-mail"
         boxProps={{mb: 's20'}}
       />
-      {/* 
+      
       <PasswordInput
         label="Senha"
         placeholder="Digite sua senha"
         boxProps={{mb: 's10'}}
       />
-      */}
+     
       <Text color="primary" preset="paragraphSmall" bold>
         Esqueci minha senha
       </Text> 

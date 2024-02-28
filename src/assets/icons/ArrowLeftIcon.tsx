@@ -14,3 +14,5 @@ export function ArrowLeftIcon({size = 20, color = 'black'}: IconBase) {
     </Svg>
   );
 }
+
+export default ArrowLeftIcon;

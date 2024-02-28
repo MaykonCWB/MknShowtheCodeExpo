@@ -50,3 +50,5 @@ export function Screen({
     </KeyboardAvoidingView>
   );
 }
+
+export default Screen;
